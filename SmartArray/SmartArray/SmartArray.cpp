@@ -8,19 +8,19 @@ class smart_array : public std::exception {
 		int count = 0;
 		int size = 0;
 public:
+	smart_array(const smart_array&) = delete;
+	smart_array& operator=(const smart_array&) = delete;
+
 	smart_array(const int size1) {
 		size = size1;
 
 		arr = new int[size];
-
-		for (int i = 0; i < size; i++) {
-			arr[i] = i;
-		}
+		
 	}
 
 
 	void add_element(int val) {
-		if (count > size) {
+		if (count >= size) {
 			throw std::runtime_error("the number of elements is greater than the number of elements for which memory is allocated.");
 		} 
 		else {
