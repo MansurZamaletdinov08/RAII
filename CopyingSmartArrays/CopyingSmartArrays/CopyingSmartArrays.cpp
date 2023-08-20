@@ -14,7 +14,6 @@ public:
 		size = size1;
 
 		arr = new int[size];
-
 	}
 
 
@@ -51,6 +50,10 @@ public:
 		for (int i = 0; i < NewArr.size; i++) {
 			this->arr[i] = NewArr.arr[i];
 		}
+		
+		for (int i = 0; i < NewArr.size; i++) {
+			this->count = count;
+		}
 	};
 
 	smart_array& operator=(const smart_array& NewArr) {
@@ -63,6 +66,11 @@ public:
 			for (int i = 0; i < NewArr.size; i++) {
 				this->arr[i] = NewArr.arr[i];
 			}
+
+			for (int i = 0; i < NewArr.size; i++) {
+				this->count = count;
+			}
+
 			return *this;
 		}
 		return *this;
